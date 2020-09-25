@@ -7,14 +7,29 @@ import speech_recognition as sr
 import os
 
 #obtain audio from the microphone
-r = sr.Recognizer()
+#r = sr.Recognizer()
 
-with sr.Microphone() as source:
-    print("Say something")
-    #r.adjust_for_ambient_noise(source)
-    audio = r.record(source, duration=3)
-    text = r.recognize_google(audio, language='en-US')
-    text = text+".exe"
-    print(text)
+#with sr.Microphone() as source:
+ #  print("Say something")
+  #  #r.adjust_for_ambient_noise(source)
+   # audio = r.record(source, duration=3)
+    #text = r.recognize_google(audio, language='en-US')
+    #text = text+".exe"
+    #print(text)
 
-os.system(text)
+#os.system(text)
+
+
+def listen_function(source):
+    print("Hello, what do you need?")
+    audio = r.listen(source)
+    user = r.recognize_google(audio, language='en-US')
+    print(user)
+    os.system(user+".exe")
+
+
+if __name__ == "__main__":
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        while 1:
+            listen_function(source)
