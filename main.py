@@ -23,21 +23,28 @@ def listen_function(source):
     audio = r.record(source, duration=3)
     try:
         user = r.recognize_google(audio, language='en-US')
+        print(user)
+        if "note" in user:
+            speak("Opening Notepad for you.")
+            os.system("notepad.exe")
+        elif "text" in user:
+            speak("Opening Notepad for you.")
+            os.system("notepad.exe")
+        elif "how are you" in user:
+            speak("I am doing well, thank you for asking.")
+        elif "you the man" in user:
+            speak("I am a program")
+        elif "Chrome" in user:
+            os.system("chrome-browser")
+        else:
+            speak("I did not understand your request.")
     except:
-        speak("I did not understand your request.")
-
-    if "how are you" in user:
-        speak("I am hungry")
-    elif "Bailey is crazy" in user:
-        speak("She is my demon, I created her!")
-
-    #print(user)
-    #os.system(user+".exe")
+        print("nothing was heard")
 
 
 if __name__ == "__main__":
 
-    speak("Hello, I am Penny Wise. How can I help you?")
+    speak("Hello, I am Jarvis. How can I help you?")
     r = sr.Recognizer()
     with sr.Microphone() as source:
         while 1:
