@@ -6,6 +6,7 @@
 import speech_recognition as sr
 import os
 import pyttsx3
+import webbrowser
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -34,8 +35,17 @@ def listen_function(source):
             speak("I am doing well, thank you for asking.")
         elif "you the man" in user:
             speak("I am a program")
-        elif "Chrome" in user:
-            os.system("chrome-browser")
+        elif "Google" in user:
+            speak("Opening google")
+            webbrowser.open('www.google.com')
+        elif "YouTube" in user:
+            speak("Opening YouTube")
+            webbrowser.open("www.youtube.com")
+        elif "music" in user:
+            speak("Opening spotify")
+            os.system("spotify.exe")
+        elif "say" in user:
+            speak(user)
         else:
             speak("I did not understand your request.")
     except:
