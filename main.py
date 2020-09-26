@@ -5,30 +5,39 @@
 
 import speech_recognition as sr
 import os
+import pyttsx3
 
-#obtain audio from the microphone
-#r = sr.Recognizer()
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+# print(voices[1].id)
+engine.setProperty('voice', voices[0].id)
 
-#with sr.Microphone() as source:
- #  print("Say something")
-  #  #r.adjust_for_ambient_noise(source)
-   # audio = r.record(source, duration=3)
-    #text = r.recognize_google(audio, language='en-US')
-    #text = text+".exe"
-    #print(text)
 
-#os.system(text)
+def speak(audioString):
+    print(audioString)
+    engine.say(audioString)
+    engine.runAndWait()
 
 
 def listen_function(source):
-    print("Hello, what do you need?")
-    audio = r.listen(source)
-    user = r.recognize_google(audio, language='en-US')
-    print(user)
-    os.system(user+".exe")
+    audio = r.record(source, duration=3)
+    try:
+        user = r.recognize_google(audio, language='en-US')
+    except:
+        speak("I did not understand your request.")
+
+    if "how are you" in user:
+        speak("I am hungry")
+    elif "Bailey is crazy" in user:
+        speak("She is my demon, I created her!")
+
+    #print(user)
+    #os.system(user+".exe")
 
 
 if __name__ == "__main__":
+
+    speak("Hello, I am Penny Wise. How can I help you?")
     r = sr.Recognizer()
     with sr.Microphone() as source:
         while 1:
