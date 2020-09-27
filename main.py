@@ -37,7 +37,8 @@ def listen_function(source):
             speak("I am a program")
         elif "Google" in user:
             speak("Opening google")
-            webbrowser.open('www.google.com')
+            user = user.replace("Google", "")
+            webbrowser.open('www.google.com/search?q=' +user)
         elif "YouTube" in user:
             speak("Opening YouTube")
             webbrowser.open("www.youtube.com")
@@ -50,6 +51,8 @@ def listen_function(source):
             speak("I did not understand your request.")
     except:
         print("nothing was heard")
+
+
 
 
 if __name__ == "__main__":
