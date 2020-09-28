@@ -5,19 +5,9 @@
 
 import speech_recognition as sr
 import os
-import pyttsx3
+from speak import speak
 import webbrowser
 
-engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-# print(voices[1].id)
-engine.setProperty('voice', voices[0].id)
-
-
-def speak(audioString):
-    print(audioString)
-    engine.say(audioString)
-    engine.runAndWait()
 
 
 def listen_function(source):
@@ -48,7 +38,9 @@ def listen_function(source):
         elif "say" in user:
             user = user.replace("say", "")
             speak(user)
-        elif "Thank you" in user:
+        elif "Bailey" in user:
+            speak("She is a good girl")
+        elif "thank you" in user:
             speak("You are most welcome.")
         else:
             speak("I did not understand your request.")
