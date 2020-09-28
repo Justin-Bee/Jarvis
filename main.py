@@ -46,7 +46,10 @@ def listen_function(source):
             speak("Opening spotify")
             os.system("spotify.exe")
         elif "say" in user:
+            user = user.replace("say", "")
             speak(user)
+        elif "Thank you" in user:
+            speak("You are most welcome.")
         else:
             speak("I did not understand your request.")
     except:
