@@ -6,7 +6,7 @@
 import speech_recognition as sr
 import os
 from speak import speak
-import webbrowser
+import webbrowser, time, sys
 
 
 
@@ -42,6 +42,11 @@ def listen_function(source):
             speak("She is a good girl")
         elif "thank you" in user:
             speak("You are most welcome.")
+        elif "what time" in user:
+            speak(time.ctime())
+        elif "shut down" in user:
+            speak("Shutting down, bye")
+            sys.exit()
         else:
             speak("I did not understand your request.")
     except:
