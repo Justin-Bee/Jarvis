@@ -35,7 +35,7 @@ def listen_function(source):
         elif "music" in user:
             speak("Opening spotify")
             os.system("spotify.exe")
-        elif "say" in user:
+        elif "Jarvis say" in user:
             user = user.replace("say", "")
             speak(user)
         elif "Bailey" in user:
@@ -46,7 +46,9 @@ def listen_function(source):
             speak(time.ctime())
         elif "shut down" in user:
             speak("Shutting down, bye")
-            sys.exit()
+            exit(1)
+        elif "best rapper" in user:
+            speak("Lil' Wayne is the best rapper alive")
         else:
             speak("I did not understand your request.")
     except:
