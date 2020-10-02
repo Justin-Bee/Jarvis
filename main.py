@@ -1,7 +1,7 @@
-# This is a sample Python script.
+# Jarvis - Personal Assistant
+# Author - Justin Bee
+# Version - 0.0.1
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 import speech_recognition as sr
 import os
