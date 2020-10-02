@@ -6,8 +6,7 @@
 import speech_recognition as sr
 import os
 from speak import speak
-import webbrowser, time, sys
-
+import webbrowser, time
 
 
 def listen_function(source):
@@ -38,8 +37,6 @@ def listen_function(source):
         elif "Jarvis say" in user:
             user = user.replace("say", "")
             speak(user)
-        elif "Bailey" in user:
-            speak("She is a good girl")
         elif "thank you" in user:
             speak("You are most welcome.")
         elif "what time" in user:
@@ -47,14 +44,10 @@ def listen_function(source):
         elif "shut down" in user:
             speak("Shutting down, bye")
             exit(1)
-        elif "best rapper" in user:
-            speak("Lil' Wayne is the best rapper alive")
         else:
             speak("I did not understand your request.")
     except:
         print("nothing was heard")
-
-
 
 
 if __name__ == "__main__":
