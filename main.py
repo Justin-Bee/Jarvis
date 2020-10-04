@@ -53,7 +53,7 @@ def listen_function(source):
         elif "joke" in user:
             speak("Knock knock")
             time.sleep(2)
-            speak("I am")
+            speak("I am")  #android humor
         else:
             speak("I did not understand your request.")
     except:
