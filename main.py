@@ -7,6 +7,7 @@ import speech_recognition as sr
 import os
 from speak import speak
 import webbrowser, time
+import subprocess
 
 
 def listen_function(source):
@@ -34,6 +35,10 @@ def listen_function(source):
         elif "music" in user:
             speak("Opening spotify")
             os.system("spotify.exe")
+        elif "games" in user:
+            speak("Opening Steam")
+            file = "C:\Program Files (x86)\Steam\Steam.exe"
+            subprocess.call([file])
         elif "Jarvis say" in user:
             user = user.replace("say", "")
             speak(user)
