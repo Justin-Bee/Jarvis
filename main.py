@@ -8,6 +8,7 @@ import os
 from speak import speak
 import webbrowser, time
 import subprocess
+import time
 
 
 def listen_function(source):
@@ -49,6 +50,10 @@ def listen_function(source):
         elif "shut down" in user:
             speak("Shutting down, bye")
             exit(1)
+        elif "joke" in user:
+            speak("Knock knock")
+            time.sleep(2)
+            speak("I am")
         else:
             speak("I did not understand your request.")
     except:
