@@ -54,6 +54,9 @@ def listen_function(source):
             speak("Knock knock")
             time.sleep(2)
             speak("I am")  #android humor
+        elif "terminal" in user:
+            speak("opening command prompt")
+            os.system("cmd.exe")
         else:
             speak("I did not understand your request.")
     except:
