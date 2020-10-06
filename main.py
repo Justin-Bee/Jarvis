@@ -52,7 +52,7 @@ def listen_function(source):
             exit(1)
         elif "joke" in user:
             speak("Knock knock")
-            time.sleep(2)
+        elif "who's there" in user:
             speak("I am")  #android humor
         elif "terminal" in user:
             speak("opening command prompt")
