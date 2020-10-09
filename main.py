@@ -9,6 +9,7 @@ from speak import speak
 import webbrowser, time
 import subprocess
 import time
+import pyjokes
 
 
 def listen_function(source):
@@ -51,7 +52,7 @@ def listen_function(source):
             speak("Shutting down, bye")
             exit(1)
         elif "joke" in user:
-            speak("Knock knock")
+            speak(pyjokes.get_joke())
         elif "who's there" in user:
             speak("I am")  #android humor
         elif "terminal" in user:

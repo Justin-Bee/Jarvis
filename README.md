@@ -8,6 +8,8 @@ pip install SpeechRecognition
 
 pip install pyttsx3
 
+pip install pyjokes
+
 ## Copyright and License
 
 Copyright 2020 Justin Bee Code released under the [Apache 2.0](https://github.com/Justin-Bee/Jarvis/blob/master/LICENSE) license.
