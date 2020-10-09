@@ -57,6 +57,8 @@ def listen_function(source):
         elif "terminal" in user:
             speak("opening command prompt")
             os.system("cmd.exe")
+        elif "what is your name" in user:
+            speak("I am Jarvis")
         else:
             speak("I did not understand your request.")
     except:
